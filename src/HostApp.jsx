@@ -55,7 +55,7 @@ function LoginScreen() {
           ログインすると、あなた専用の予約キューとOBS用URLが自動で発行されます。
         </p>
 
-        
+        <a
           href={`${BACKEND_URL}/auth/twitch`}
           className="inline-flex items-center gap-2 px-6 py-3 rounded bg-[#F0A202] text-[#0D0F13] font-display uppercase tracking-wide hover:bg-[#FFB627] transition mb-10"
         >
@@ -147,6 +147,7 @@ export default function HostApp() {
     <div className="min-h-screen w-full bg-[#14161B] text-[#E8E6E1]" style={{ fontFamily: "'Inter', sans-serif" }}>
       <GlobalStyle />
 
+      {/* ── ヘッダー ── */}
       <div className="border-b border-[#2A2D35] bg-[#191B21] px-6 py-3 flex items-center justify-between flex-wrap gap-3">
         <div className="flex items-center gap-2">
           <Circle className={`w-3 h-3 ${socketReady ? "text-[#3ED598] fill-[#3ED598] tally-live" : "text-[#5A5F6A] fill-[#5A5F6A]"}`} />
@@ -169,6 +170,7 @@ export default function HostApp() {
         </div>
       </div>
 
+      {/* ── オーバーレイURL案内 ── */}
       <div className="px-6 py-3 bg-[#1B1E24] border-b border-[#2A2D35] flex items-center gap-3 flex-wrap">
         <MonitorPlay className="w-4 h-4 text-[#7A7F8A] shrink-0" />
         <span className="text-xs text-[#7A7F8A] shrink-0">OBSブラウザソース用URL</span>
@@ -182,6 +184,7 @@ export default function HostApp() {
       </div>
 
       <div className="grid grid-cols-12 gap-4 p-4 lg:p-6">
+        {/* ── 左：予約キュー ── */}
         <div className="col-span-12 lg:col-span-6 bg-[#191B21] border border-[#2A2D35] rounded-lg flex flex-col">
           <div className="px-5 py-3 border-b border-[#2A2D35] flex items-center justify-between">
             <h2 className="font-display text-sm uppercase tracking-widest text-[#9CA1AC]">予約キュー</h2>
@@ -217,6 +220,7 @@ export default function HostApp() {
           </div>
         </div>
 
+        {/* ── 右：アクティビティログ ── */}
         <div className="col-span-12 lg:col-span-6 bg-[#191B21] border border-[#2A2D35] rounded-lg flex flex-col">
           <div className="px-5 py-3 border-b border-[#2A2D35]">
             <h2 className="font-display text-sm uppercase tracking-widest text-[#9CA1AC]">アクティビティログ</h2>
